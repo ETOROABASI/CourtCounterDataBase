@@ -8,12 +8,12 @@
     tools:context="com.example.android.courtcounterdatabase.GameListActivity">
 
 
-    <!--<android.support.v7.widget.RecyclerView-->
-        <!--android:id="@+id/rec_view"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent">-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rec_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <!--</android.support.v7.widget.RecyclerView>-->
+    </android.support.v7.widget.RecyclerView>
 
     <Button
         android:id="@+id/newGame"

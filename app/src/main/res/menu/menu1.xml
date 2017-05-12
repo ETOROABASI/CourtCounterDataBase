@@ -12,5 +12,9 @@
         android:title="End Game"
         app:showAsAction="never"
         />
+    <item
+        android:id="@+id/showGames"
+        android:title="Saved Games"
+        app:showAsAction="never"/>
 
 </menu>

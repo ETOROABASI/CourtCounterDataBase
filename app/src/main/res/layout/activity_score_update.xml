@@ -145,7 +145,7 @@
         android:id="@+id/btn_reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentLeft="false"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="22dp"
@@ -154,36 +154,14 @@
         android:layout_below="@id/ll_main"
         android:text="Reset Score" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="false"
-        android:layout_alignParentRight="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="22dp"
-        android:layout_marginRight="22dp"
-        android:layout_below="@id/ll_main"
-        android:onClick="addToDatabase"
-        android:text="End Game" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rec_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btn_reset">
-
-    </android.support.v7.widget.RecyclerView>
-
-    <!--<Button-->
-        <!--android:layout_width="wrap_content"-->
+    <!--<android.support.v7.widget.RecyclerView-->
+        <!--android:id="@+id/rec_view"-->
+        <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--android:layout_alignParentRight="true"-->
-        <!--android:layout_centerHorizontal="false"-->
-        <!--android:layout_marginBottom="8dp"-->
-        <!--android:layout_marginLeft="22dp"-->
-        <!--android:layout_marginRight="22dp"-->
-        <!--android:onClick="newGame1"-->
-        <!--android:text="New Game"/>-->
+        <!--android:layout_below="@id/btn_reset">-->
+
+    <!--</android.support.v7.widget.RecyclerView>-->
+
+
 </RelativeLayout>

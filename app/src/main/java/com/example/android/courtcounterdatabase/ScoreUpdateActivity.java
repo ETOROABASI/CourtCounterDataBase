@@ -27,17 +27,18 @@ import static com.example.android.courtcounterdatabase.R.id.finalTeamBScore;
 public class ScoreUpdateActivity extends AppCompatActivity {
 
 
-    private CustomAdapter mAdapter;
-    private SQLiteDatabase mDb;
+    //private CustomAdapter mAdapter;
+    public SQLiteDatabase mDb;
     private TextView teamAName;
     private TextView teamBName;
     private TextView teamAScore;
     private TextView teamBScore;
     private final static String LOG_TAG = FinalScoreActivity.class.getSimpleName();
+    GameListActivity gameListActivity;
 
 
 
-    private RecyclerView recyclerView;
+    //private RecyclerView recyclerView;
 
 
 
@@ -61,8 +62,8 @@ public class ScoreUpdateActivity extends AppCompatActivity {
 
 
 
-        recyclerView = (RecyclerView) findViewById(R.id.rec_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        recyclerView = (RecyclerView) findViewById(R.id.rec_view);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
         // Create a DB helper (this will create the DB if run for the first time)
@@ -72,16 +73,18 @@ public class ScoreUpdateActivity extends AppCompatActivity {
         // because you will be adding restaurant customers
         mDb = dbHelper.getWritableDatabase();
 
+        //gameListActivity.mAdapter.swapCursor(gameListActivity.getAllGames());
+
         // Get all guest info from the database and save in a cursor
-        Cursor cursor = getAllGames();
+       // Cursor cursor = getAllGames();
 
         // Create an adapter for that cursor to display the data
-        mAdapter = new CustomAdapter(this, cursor);
+//        mAdapter = new CustomAdapter(this, cursor);
 
         // Create an adapter for that cursor to display the data
         //mAdapter = new CustomAdapter(this, cursor);
 
-        recyclerView.setAdapter(mAdapter);
+        //recyclerView.setAdapter(mAdapter);
 
 
 
@@ -190,23 +193,32 @@ public class ScoreUpdateActivity extends AppCompatActivity {
 //            bundle.putString("teamBName", String.valueOf(teamBName.getText()));
 //            bundle.putString("teamBscore", String.valueOf(teamBScore.getText()));
 //            intent1.putExtras(bundle);
-            startActivity(intent1);        }
+            startActivity(intent1);
+            finish();
+        }
 
         else if (id1 == R.id.finalScore){
 
 
             addToDatabase1();
 
-//            Intent intent1 = new Intent(ScoreUpdateActivity.this, GameListActivity.class);
-//
-//            Bundle bundle = new Bundle();
-//            bundle.putString("teamAName", String.valueOf(teamAName.getText()));
-//            bundle.putString("teamAscore", String.valueOf(teamAScore.getText()));
-//            bundle.putString("teamBName", String.valueOf(teamBName.getText()));
-//            bundle.putString("teamBscore", String.valueOf(teamBScore.getText()));
-//            intent1.putExtras(bundle);
-//            startActivity(intent1);
-//            finish();
+            Intent intent1 = new Intent(ScoreUpdateActivity.this, FinalScoreActivity.class);
+
+            Bundle bundle = new Bundle();
+            bundle.putString("teamAName", String.valueOf(teamAName.getText()));
+            bundle.putString("teamAscore", String.valueOf(teamAScore.getText()));
+            bundle.putString("teamBName", String.valueOf(teamBName.getText()));
+            bundle.putString("teamBscore", String.valueOf(teamBScore.getText()));
+            intent1.putExtras(bundle);
+            startActivity(intent1);
+            finish();
+        }
+
+        else if (id1 == R.id.showGames){
+
+            Intent intent = new Intent(this, GameListActivity.class);
+            startActivity(intent);
+            //finish();
         }
         return super.onOptionsItemSelected(item);
 
@@ -217,18 +229,18 @@ public class ScoreUpdateActivity extends AppCompatActivity {
 
 
     //DATABASE SEGMENT
-
-    public Cursor getAllGames() {               // TODO try putting this method in the GameListActivity
-        return mDb.query(
-                GameListContract.GameListEntry.TABLE_NAME,
-                null, // Column
-                null, // Where clause
-                null, // Arguments
-                null, // Group by
-                null, // having
-                GameListContract.GameListEntry.COLUMN_TIMESTAMP // Sort_order
-        );
-    }
+//
+//    public Cursor getAllGames() {               // TODO try putting this method in the GameListActivity
+//        return mDb.query(
+//                GameListContract.GameListEntry.TABLE_NAME,
+//                null, // Column
+//                null, // Where clause
+//                null, // Arguments
+//                null, // Group by
+//                null, // having
+//                GameListContract.GameListEntry.COLUMN_TIMESTAMP // Sort_order
+//        );
+//    }
 
 
     private long addGameResult(String teamA, int teamAScore, String teamB, int teamBScore) {
@@ -267,7 +279,7 @@ public class ScoreUpdateActivity extends AppCompatActivity {
         addGameResult(this.teamAName.getText().toString(), teamAScore, teamBName.getText().toString(), teamBScore);
 
         // Update the cursor in the adapter to trigger UI to display the new list
-        mAdapter.swapCursor(getAllGames());
+//        gameListActivity.mAdapter.swapCursor(gameListActivity.getAllGames());
     }
 
 }

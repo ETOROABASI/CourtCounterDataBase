@@ -17,8 +17,8 @@ import com.example.android.courtcounterdatabase.data.GameListDbHelper;
 
 public class FinalScoreActivity extends AppCompatActivity {
 
-    private CustomAdapter mAdapter;
-    private SQLiteDatabase mDb;
+//    private CustomAdapter mAdapter;
+//    private SQLiteDatabase mDb;
     private TextView teamAName;
     private TextView teamBName;
     private TextView teamAScore;
@@ -83,29 +83,29 @@ public class FinalScoreActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
-    //DATABASE SEGMENT
-
-    private Cursor getAllGames() {
-        return mDb.query(
-                GameListContract.GameListEntry.TABLE_NAME,
-                null, // Column
-                null, // Where clause
-                null, // Arguments
-                null, // Group by
-                null, // having
-                GameListContract.GameListEntry.COLUMN_TIMESTAMP // Sort_order
-        );
-    }
-
-
-    private long addGameResult(String teamA, int teamAScore, String teamB, int teamBScore) {
-        ContentValues cv = new ContentValues();
-        cv.put(GameListContract.GameListEntry.COLUMN_TEAM_A, teamA);
-        cv.put(GameListContract.GameListEntry.COLUMN_TEAM_A_SCORE, teamAScore);
-        cv.put(GameListContract.GameListEntry.COLUMN_TEAM_B, teamB);
-        cv.put(GameListContract.GameListEntry.COLUMN_TEAM_B_SCORE, teamBScore);
-        return mDb.insert(GameListContract.GameListEntry.TABLE_NAME, null, cv);
-    }
-
+//
+//    //DATABASE SEGMENT
+//
+//    private Cursor getAllGames() {
+//        return mDb.query(
+//                GameListContract.GameListEntry.TABLE_NAME,
+//                null, // Column
+//                null, // Where clause
+//                null, // Arguments
+//                null, // Group by
+//                null, // having
+//                GameListContract.GameListEntry.COLUMN_TIMESTAMP // Sort_order
+//        );
+//    }
+//
+//
+//    private long addGameResult(String teamA, int teamAScore, String teamB, int teamBScore) {
+//        ContentValues cv = new ContentValues();
+//        cv.put(GameListContract.GameListEntry.COLUMN_TEAM_A, teamA);
+//        cv.put(GameListContract.GameListEntry.COLUMN_TEAM_A_SCORE, teamAScore);
+//        cv.put(GameListContract.GameListEntry.COLUMN_TEAM_B, teamB);
+//        cv.put(GameListContract.GameListEntry.COLUMN_TEAM_B_SCORE, teamBScore);
+//        return mDb.insert(GameListContract.GameListEntry.TABLE_NAME, null, cv);
+//    }
+//
 }
