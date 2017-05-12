@@ -50,7 +50,9 @@ public class GameListActivity extends AppCompatActivity {
         // Create an adapter for that cursor to display the data
         //mAdapter = new CustomAdapter(this, cursor);
 
-        recyclerView.setAdapter(mAdapter);
+        recyclerView.setAdapter(mAdapter);  //sets the adapter
+
+        //
 
     }
 

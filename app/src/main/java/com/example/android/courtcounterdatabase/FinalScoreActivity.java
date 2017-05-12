@@ -50,6 +50,8 @@ public class FinalScoreActivity extends AppCompatActivity {
         teamAScore.setText(scoreTeamA);
         teamBScore.setText(scoreTeamB);
 
+        //this works
+
     }
 
 
