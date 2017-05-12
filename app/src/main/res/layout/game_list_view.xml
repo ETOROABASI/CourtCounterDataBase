@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+    <TextView
+        android:id="@+id/tv_serial_number"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:text="1"
+        android:gravity="center"
+        android:background="@drawable/square"
+        />
+    <LinearLayout
+        android:id="@+id/ll_content_A_main"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/tv_teamANameList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center_horizontal"
+            android:paddingBottom="4dp"
+            android:text="Team A"
+            android:textColor="#616161"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_teamAscoreList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center_horizontal"
+            android:paddingTop="4dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+        </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_content_B_main"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/tv_teamBNameList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center_horizontal"
+            android:paddingBottom="4dp"
+            android:text="Team B"
+            android:textColor="#616161"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_teamBscoreList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center_horizontal"
+            android:paddingTop="4dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    </LinearLayout>

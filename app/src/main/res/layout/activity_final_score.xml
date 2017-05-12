@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.courtcounterdatabase.FinalScoreActivity"
+    android:paddingLeft="48dp"
+    android:paddingRight="48dp"
+    android:paddingTop="16dp">
+
+    <TextView
+        android:id="@+id/finalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="final score"
+        android:textAllCaps="true"
+        android:padding="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:textSize="30sp"/>
+
+    <LinearLayout
+        android:id="@+id/firstLinear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/finalText">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/finalTeamAName"
+            android:textSize="20sp"
+            android:text="Score A"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/finalTeamAScore"
+            android:textSize="56sp"
+            android:text="0"/>
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/secondLinear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/finalText"
+        android:layout_alignParentRight="true"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/finalTeamBName"
+            android:textSize="20sp"
+            android:text="Score B"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/finalTeamBScore"
+            android:textSize="56sp"
+            android:text="0"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_new_game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="newGame"
+        android:text="New Game"
+        android:layout_below="@id/firstLinear"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"/>
+
+
+    <Button
+        android:id="@+id/btn_game_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="gameList"
+        android:text="Game List"
+        android:layout_below="@id/btn_new_game"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"/>
+
+</RelativeLayout>
